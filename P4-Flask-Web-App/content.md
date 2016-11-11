@@ -33,7 +33,7 @@ Use this tutorial to a virtual environment set up with `virtualenv`, though you 
 
 To start, follow the [installation instructions](https://virtualenv.pypa.io/en/latest/installation.html) to get yourself a copy of the `virtualenv` program. To verify that you've installed correctly, run the command `$ which virtualenv` and you should see the path for the virtualenv executable.
 
-Once we have the `virtualenv` command installed, we will use it to create a new virtual environment in a subdirectory of our project called `venv`. However, we also want to make sure that we create a virtual environment using Python 3, not Python 2. So we'll use the `-p` flag of the `virtualenv` command to specify a Python interpreter to use.
+Once we have the `virtualenv` command installed, we will use it to create a new virtual environment in a subdirectory of our project called `venv`. However, we also want to make sure that we create a virtual environment using the correct version of Python. So we'll use the `-p` flag of the `virtualenv` command to specify a Python interpreter to use.
 
 First, find out the file path to Python by running this command:
 
@@ -41,7 +41,7 @@ First, find out the file path to Python by running this command:
 
 On my machine, this outputs `/usr/local/bin/python`, but it might be different for you.
 
-Then, run the `virtualenv` command supplying the path to the Python 3 interpreter after with the `-p` flag, followed by the name of the virtual environment directory, in this case `venv`:
+Then, run the `virtualenv` command supplying the path to the Python interpreter with the `-p` flag, followed by the name of the virtual environment directory, in this case `venv`:
 
 	$ virtualenv -p /path/to/python venv
 
