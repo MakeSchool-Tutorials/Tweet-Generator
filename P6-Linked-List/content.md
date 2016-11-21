@@ -3,26 +3,25 @@ title: Linked List
 slug: linked-list
 ---
 
-Linked List
-==
-
 We're going to take a little detour in this project to explore some core data structures and learn how they work. We'll first start with the [*linked list*](https://en.wikipedia.org/wiki/Linked_list) structure.
 
-So, what is a linked list? In its simplest form, a linked list is a group of nodes where each node contains both some data (the value to store) and a link (or reference) to the next node in the group.
+So, what is a linked list? In its simplest form, a linked list is a group of nodes where each node contains both some data (the item to store) and a link (or reference) to the next node in the group.
 
-Data is appended to a linked list by creating a new node and referencing it from the last node already in the list. Removing a node is as simple as changing the reference from the previous node in the list so that it points to the next node in the list.
+An item is appended to a linked list by creating a new node and referencing it from the last node already in the list. Removing a node is as simple as changing the reference from the previous node in the list so that it points to the next node in the list.
 
 We'll describe the desired behavior with a sample interface. Then it will be up to you to implement the linked list yourself.
 
 ## Specifications
 Our linked list must implement the following features:
 
-- Can store any type of value in a node's **data** property
-- Stores the first node as its **head**
-- Stores the last node as its **tail**
-- Can **append** a new value
-- Can **find** a value from linked list
-- Can **delete** a value from linked list
+- Can store any type of item in a node's **data** property
+- Stores the first item in its **head** node
+- Stores the last item in its **tail** node
+- Can **append** a new item after its tail node
+- Can **prepend** a new item before its head node
+- Can **find** an item using a matching function
+- Can **delete** an item, removing the node containing it
+- Can calculate the **length** of the linked list
 
 Here is an example interface:
 
@@ -57,18 +56,21 @@ You can run the unit tests to see which methods are passing or failing with:
 
 Once you finish implementing the `Node` and `LinkedList` classes and have made the respective unit tests pass, be sure to commit your solutions and push to GitHub!
 
-### Help! All this talk of links and nodes has got me feeling woozy.
+Grocery List Example
+==
+
+Has all this talk of links and nodes made you feel woozy?
 
 If it's your first time working with linked lists, it may seem confusing. Never fear, however, linked lists are actually quite simple. The terminology can be daunting at first, but once you build one for yourself you'll see how basic they actually are.
 
-Let's start with the purpose of a linked list. Say you want to store a sequence of data, like a grocery list. Using an array (or list in Python) you would store each grocery item as an element of the list, like this:
+Let's start with the purpose of a linked list. Say you want to store a sequence of items, like a grocery list. Using an array (or list in Python) you would store each grocery item as an element of the list, like this:
 
-	0           1        2       3
+	 0        1       2      3
 	["spinach", "beans", "rice", "oil"]
 
 Finding an element from a list is easy enough, the computer just has to iterate through each item until it finds the one you want. What about adding an item to the end of the list? Well, in that case the computer just creates a new element (allocates more memory) for the list at the end, at index 4:
 
-	0           1        2       3      4
+	 0        1       2      3     4
 	["spinach", "beans", "rice", "oil", "guava"]
 
 Not too bad. But what if you wanted to insert an item at the _beginning_ of the list, at index 0? In that case, you'd have to create room at the end of the list and move _every single item after index 0_. It would take the computer more work to do this.
@@ -77,7 +79,7 @@ Think of a list like a row of chairs in a fancy theater. It's easy to place peop
 
 This is a lot of extra work. It would be much simpler if we could just put a new chair down in the position we need it.
 
-So we come to the linked list. A linked list is like an array (or list in Python) in that it stores data as a sequence, but unlike an array it does not store its data as _elements_ which can are referenced by their _index_. Instead,  a linked list stores _nodes_ which themselves contain a _reference_ (or link) to the next node in the sequence.
+So we come to the linked list. A linked list is like an array (or list in Python) in that it stores data as a sequence, but unlike an array it does not store its data as _elements_ which can be referenced by their _index_. Instead, a linked list stores its data in _nodes_ which themselves contain a _reference_ (or link) to the next node in the sequence.
 
 Let's go back to our original grocery list problem, except now we'll display it as a linked list:
 
@@ -87,9 +89,9 @@ In this notation, the `[]` denotes the linked list, each `()` represents a node,
 
 Looking at this list, the following sentences are all true:
 
-* The **node** with value `"spinach"` is at the **head** of the linked list
-* The **node** with value `"beans"` is the next node after the **head**
-* The **tail** of the linked list is the **node** with value `"oil"`
+* The **node** with item `"spinach"` is the **head** of the linked list
+* The **node** with item `"beans"` is the next node after the **head**
+* The **node** with item `"oil"` is the **tail** of the linked list
 * There are 4 **nodes** in this linked list
 * This is a **singly linked list**
 
@@ -109,13 +111,15 @@ Because a linked list does not have indexed elements, like an array, we don't ha
 
 So that's pretty neat.
 
-If the image of a linked list isn't quite sticking, let's use an analogy. Whereas an array (or list in Python) is like a row of chairs in a theater, a linked list is like a train with cars (nodes) that have cargo (values) and are connected to each other by a coupling (reference/link). The front of the train is like the head of the list, and the back (the caboose) is like the tail of the list.
+If the image of a linked list isn't quite sticking, let's use an analogy. Whereas an array (or list in Python) is like a row of chairs in a theater, a linked list is like a train with cars (nodes) that have cargo (items) and are connected to each other by a coupling (reference/link). The front of the train is like the head of the list, and the back (the caboose) is like the tail of the list.
 
 The flexibility of a linked list makes it a powerful tool in many programming tasks. Have fun with it!
 
 Where to Go From Here
 ==
-Finished already? Is your code clean, readable, and well tested? No? Ok, go do that first. Then, add methods to your `LinkedList` class so that it can be used as an [iterable](https://wiki.python.org/moin/Iterator), like in a `for` loop like this:
+Finished already? Is your code clean, readable, and well tested? No? Ok, go do that first. Then, add a new `replace` method to your `LinkedList` class that deletes an existing item and replaces it with a new item, without creating a new node.
+
+Want to make your `LinkedList` class more convenient to use? Add methods so that it can be used as an [iterable](https://wiki.python.org/moin/Iterator), like in a `for` loop like this:
 
 	mylist = LinkedList()
 
@@ -123,7 +127,9 @@ Finished already? Is your code clean, readable, and well tested? No? Ok, go do t
 	mylist.append('b')
 	mylist.append('c')
 
-	for data in mylist:
-		print data
+	for item in mylist:
+		print item
 
-Need another challenge? Read about the [*doubly linked list*](https://en.wikipedia.org/wiki/Doubly_linked_list) structure and implement it in your own `DoublyLinkedList` class.
+Now consider how you calculate the **length** of the linked list. Do you traverse through all nodes each time the `length` method is called? Is this efficient? Is it necessary? Consider an alternative approach that doesn't require node traversal and implement it. Benchmark its running time against the first approach on short lists and long lists.
+
+Need another challenge? Read about the [*doubly linked list*](https://en.wikipedia.org/wiki/Doubly_linked_list) structure and implement it in your own `DoublyLinkedList` class. What advantages and disadvantages does this structure have over a singly linked list?
