@@ -17,7 +17,7 @@ You can also use a dictionary to store different types of information associated
 	student['name']  # => 'Amy'
 	student['age']   # => 22
 
-You may have used dictionaries already, but do you know how they work? The next stop we're going to take on our little detour in this project is to explore and learn about the data structure that power's Python's dictionary feature: the [*hash table*](https://en.wikipedia.org/wiki/Hash_table).
+You may have used dictionaries already, but do you know how they work? The next stop we're going to take on our little detour in this project is to learn about the data structure that powers Python's dictionary feature: the [*hash table*](https://en.wikipedia.org/wiki/Hash_table).
 
 We'll describe the desired behavior with a sample interface. Then, we'll go over some of the constraints and tools we can use. Finally, it will be up to you to implement the hash table yourself.
 
@@ -26,11 +26,11 @@ Our hash table must implement the following features:
 
 - Can **set** any type of value to associate it with a key
 - Can **get** the value associated with a key
-- Can **update** an existing key with a new value
 - Can **delete** a key and its associated value
-- Can return a list of all **keys**
-- Can return a list of all **values**
-- Can return the **size** of the hash table
+- Can test if the hash table **contains** a key
+- Can get a list of all **keys** in the hash table
+- Can get a list of all **values** in the hash table
+- Can calculate the **length** of the hash table
 
 Here is an example `HashTable` object that implements the specifications listed above. It stores the decimal digit that corresponds to its roman numeral.
 
@@ -39,7 +39,7 @@ Here is an example `HashTable` object that implements the specifications listed 
 	roman.get('I')         # => 1
 	roman.set('V', 5)
 	roman.set('X', 9)
-	roman.update('X', 10)  # Oops, let's fix that.
+	roman.set('X', 10)     # Oops, let's fix that (can update a key's value)
 	roman.get('X')         # => 10
 	roman.keys()           # => ['I', 'V', 'X']
 	roman.values()         # => [1, 5, 10]
@@ -205,4 +205,17 @@ Now improve your hash table to handle collisions by using linked lists as bucket
 
 Where to Go From Here
 ==
-Finished already? Is your code clean, readable, and well tested? No? Ok, go do that first. Then, expand the interface for your hash table to match that of [Python's built in dictionary](https://docs.python.org/2.7/library/stdtypes.html#mapping-types-dict). Your hash table should support many of the most commonly used features of a regular dictionary.
+Finished already? Is your code clean, readable, and well tested? No? Ok, go do that first. Then, expand the interface for your hash table to match that of [Python's built in dictionary](https://docs.python.org/2.7/library/stdtypes.html#mapping-types-dict). Your hash table should support many of the most commonly used features of a regular dictionary, like the `items` method to get a list all keys and values.
+
+Consider how you calculate the **length** of the hash table. Do you traverse through all buckets each time the `length` method is called? Is this efficient? Is it necessary? Consider an alternative approach that doesn't require bucket traversal and implement it. Benchmark its running time against the first approach on small hash tables and large ones.
+
+Want to make your `HashTable` class more convenient to use? Add methods so that it can be used as an [iterable](https://wiki.python.org/moin/Iterator), like in a `for` loop like this:
+
+	roman = HashTable()
+	roman.set('I', 1)
+	roman.set('V', 5)
+	roman.set('X', 10)
+	for key, value in roman:
+		print key, value
+
+Need another challenge? Read about some of the other techniques for [collision resolution](https://en.wikipedia.org/wiki/Hash_table#Collision_resolution) structure and implement it in your `HashTable` class. What advantages and disadvantages does this approach have over chaining with linked lists?
