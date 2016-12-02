@@ -205,7 +205,7 @@ Now improve your hash table to handle collisions by using linked lists as bucket
 
 Where to Go From Here
 ==
-Finished already? Is your code clean, readable, and well tested? No? Ok, go do that first. Then, expand the interface for your hash table to match that of [Python's built in dictionary](https://docs.python.org/2.7/library/stdtypes.html#mapping-types-dict). Your hash table should support many of the most commonly used features of a regular dictionary, like the `items` method to get a list all keys and values.
+Finished already? Is your code clean, readable, and well tested? No? Ok, go do that first. Then, expand the interface for your hash table to match that of [Python's built in dictionary](https://docs.python.org/2.7/library/stdtypes.html#mapping-types-dict). Your hash table should support many of the most commonly used features of a regular dictionary, like the `items` method to get a list of key-value pairs. You can also add several magic methods to allow dict-like subscripting syntax.
 
 Consider how you calculate the **length** of the hash table. Do you traverse through all buckets each time the `length` method is called? Is this efficient? Is it necessary? Consider an alternative approach that doesn't require bucket traversal and implement it. Benchmark its running time against the first approach on small hash tables and large ones.
 
@@ -218,4 +218,4 @@ Want to make your `HashTable` class more convenient to use? Add methods so that 
 	for key, value in roman:
 		print key, value
 
-Need another challenge? Read about some of the other techniques for [collision resolution](https://en.wikipedia.org/wiki/Hash_table#Collision_resolution) structure and implement it in your `HashTable` class. What advantages and disadvantages does this approach have over chaining with linked lists?
+Need another challenge? Read about some of the other techniques for [collision resolution](https://en.wikipedia.org/wiki/Hash_table#Collision_resolution) (like linear probing) and implement one in your `HashTable` class. Benchmark its running time against chaining on small hash tables and large ones. What advantages and disadvantages does this approach have over chaining with linked lists?
