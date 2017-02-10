@@ -56,19 +56,50 @@ Remember how we defined several different functions to create a histogram and ac
 
 If you're not familiar with how to define classes in Python, you may want to [read some of the Classes chapter of the Python tutorial](https://docs.python.org/2.7/tutorial/classes.html) to get a handle on the syntax. You don't need to read the whole chapter before getting started, especially if you've defined classes in other programming languages.
 
-I've created a starter code project to help guide you in refactoring your histogram functions into classes. We'll be using *Classroom for GitHub* to manage repositories with starter code. You'll need to:
+I've created a starter code project to help guide you in refactoring your histogram functions into classes. You'll need to:
 
-1. Sign into GitHub and be sure you can access [GitHub Classroom](https://classroom.github.com/)
-2. Accept the [Histograms assignment](https://classroom.github.com/assignment-invitations/1a71b50f3f67f9d2574caf0b915c1ba1) and follow the link to the new repository
-3. Clone the Histograms repository and run the unit tests to see the failures
-4. Refactor your existing histogram functions into class instance methods, then run the unit tests and fix any errors until they pass
+1. Clone the [Histograms repository](https://github.com/MakeSchool-Tutorials/Histograms) onto your computer:
 
-You can run the `histograms.py` module as a script to test while refactoring:
+		git clone https://github.com/MakeSchool-Tutorials/Histograms.git
 
-	python histograms.py
+2. Run the unit tests to see which methods are passing or failing:
 
-You should also run the unit tests to see which methods are passing or failing:
+		python test_histograms.py
 
-	python test_histograms.py
+3. Alternatively you can use `pytest` the run unit tests to see more readable and descriptive output:
+
+		pip install pytest  # (only need to install once)
+		pytest test_histograms.py
+
+4. Refactor your existing histogram functions into class instance methods
+
+4. Run the unit tests again and fix any errors until they pass:
+
+		python test_histograms.py  # standard error formatting
+		pytest test_histograms.py  # or pytest pretty formatting
+
+5. You can also run the `histograms.py` module as a script to check your results while refactoring:
+
+		python histograms.py
+
+Before implementing the missing methods (marked `#TODO`):
+
+	text list: abracadabra
+	dictogram: {}
+	listogram: []
+
+	text list: ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
+	dictogram: {}
+	listogram: []
+
+After correctly implementing the histogram methods:
+
+	text list: abracadabra
+	dictogram: {'a': 5, 'r': 2, 'b': 2, 'c': 1, 'd': 1}
+	listogram: [('a', 5), ('b', 2), ('r', 2), ('c', 1), ('d', 1)]
+
+	text list: ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
+	dictogram: {'blue': 1, 'fish': 4, 'two': 1, 'red': 1, 'one': 1}
+	listogram: [('one', 1), ('fish', 4), ('two', 1), ('red', 1), ('blue', 1)]
 
 Once you finish implementing the `Dictogram` and `Listogram` classes and have made the respective unit tests pass, be sure to commit your solutions and push to GitHub!
