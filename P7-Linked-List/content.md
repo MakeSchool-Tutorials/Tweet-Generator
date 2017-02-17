@@ -45,16 +45,47 @@ Not too bad, right? Ok, now go build your own linked list!
 
 I've created a starter code project to help guide you in creating the `LinkedList` structure. You'll need to:
 
-1. Sign into GitHub
-2. Accept the [Linked-List assignment](https://classroom.github.com/assignment-invitations/9b6d3ce30d111ba7dcaa0ad34763c85c) and follow the link to the new repository
-3. Clone the Linked-List repository and run the unit tests to see the failures
+1. Pull the starter code from the course's origin repository
+
+		git pull origin master
+
+2. Run the unit tests to see which methods are passing or failing:
+
+		python test_linkedlist.py
+
+3. Alternatively you can use `pytest` the run unit tests to see more readable and descriptive output:
+
+		pip install pytest  # (only need to install once)
+		pytest test_linkedlist.py
+
 4. Implement the missing instance methods, then run the unit tests and fix any errors until they pass
 
-You can run the unit tests to see which methods are passing or failing with:
+5. Run the unit tests again and fix any errors until they pass:
 
-	python test_linkedlist.py
+		python test_linkedlist.py  # standard error formatting
+		pytest test_linkedlist.py  # or pytest pretty formatting
 
-Once you finish implementing the `Node` and `LinkedList` classes and have made the respective unit tests pass, be sure to commit your solutions and push to GitHub!
+6. You can also run the `linkedlist.py` module as a script to check your results while refactoring:
+
+		python linkedlist.py
+
+	After correctly  implementing the missing instance methods (marked `#TODO`):
+
+		LinkedList([])
+		LinkedList(['A'])
+		LinkedList(['A', 'B'])
+		LinkedList(['A', 'B', 'C'])
+		head: Node('A')
+		tail: Node('C')
+		3
+		LinkedList(['B', 'C'])
+		LinkedList(['B'])
+		LinkedList([])
+		head: None
+		tail: None
+		0
+
+Once you finish implementing the `LinkedList` class and have made the respective unit tests pass, be sure to commit your solutions and push to GitHub!
 
 Grocery List Example
 ==
