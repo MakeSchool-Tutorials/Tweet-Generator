@@ -30,6 +30,7 @@ Our hash table must implement the following features:
 - Can test if the hash table **contains** a key
 - Can get a list of all **keys** in the hash table
 - Can get a list of all **values** in the hash table
+- Can get a list of all **entries** (key-value pairs) in the hash table
 - Can calculate the **length** of the hash table
 
 Here is an example `HashTable` object that implements the specifications listed above. It stores the decimal digit that corresponds to its roman numeral.
@@ -58,16 +59,44 @@ Got it? Ok, go forth and build your own hash table!
 
 ### Starter Code Project
 
-I've created a starter code project to help guide you in creating the `LinkedList` structure. You'll need to:
+I've created starter code and unit tests to help guide you in creating the `HashTable` structure. You'll need to:
 
-1. Sign into GitHub
-2. Accept the [Hash Table assignment](https://classroom.github.com/assignment-invitations/335564eeaa21128cb02ee07f9064ea53) and follow the link to the new repository
-3. Clone the Hash-Table repository and run the unit tests to see the failures
+1. Pull the Hash Table starter code from the course's origin repository
+
+		git pull origin master
+
+2. Run the unit tests to see which methods are passing or failing:
+
+		python test_hashtable.py
+
+3. Alternatively you can use `pytest` the run unit tests to see more readable and descriptive output:
+
+		pip install pytest  # (only need to install once)
+		pytest test_hashtable.py
+
 4. Implement the missing instance methods, then run the unit tests and fix any errors until they pass
 
-You can run the unit tests to see which methods are passing or failing with:
+5. Run the unit tests again and fix any errors until they pass:
 
-	python test_hashtable.py
+		python test_hashtable.py  # standard error formatting
+		pytest test_hashtable.py  # or pytest pretty formatting
+
+6. You can also run the `hashtable.py` module as a script to check your results while refactoring:
+
+		python hashtable.py
+
+	After correctly implementing the missing instance methods (marked `#TODO`):
+
+		HashTable([])
+		get(I): 1
+		get(V): 5
+		get(X): 10
+		length: 3
+		HashTable([('I', 1), ('X', 10), ('V', 5)])
+		HashTable([('I', 1), ('V', 5)])
+		HashTable([('I', 1)])
+		HashTable([])
+		length: 0
 
 Once you finish implementing the `HashTable` class and have made the respective unit tests pass, be sure to commit your solutions and push to GitHub!
 
@@ -197,7 +226,9 @@ When inserting a new value, our hash table will follow these steps:
 1. Calculate the bucket for the key using our hashing algorithm
 2. Append to the bucket's linked list a tuple with both the key and value to be stored
 
-So, it looks like we'll need to a linked list data structure. Good thing we've already created a `LinkedList` class that we can import and use!
+So, it looks like we'll need to use a linked list data structure. Good thing we've already created a `LinkedList` class! Here's how we can import our `LinkedList` class from the `linkedlist` module:
+
+	from linkedlist import LinkedList
 
 > [action]
 >
