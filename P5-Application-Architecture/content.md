@@ -12,7 +12,7 @@ When approaching questions of application architecture, there are a lot of direc
 - What are the scopes of variables and are they appropriate for their use case? If there are global variables, why are they needed?
 - Are the functions small and clearly specified, with as few side effects as possible?
 - Are there functions that could be better organized in an Object-Oriented Programming style by defining them as methods of a class?
-- Can files be used as [both modules and as scripts](https://docs.python.org/2.7/tutorial/modules.html#executing-modules-as-scripts)?
+- Can files be used as [both modules and as scripts](https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts)?
 - Do modules all depend on each other or can they be used independently?
 
 These questions will guide you towards thinking about application architecture in a more nuanced way. If you find that your code can use improvement (and what code *couldn't* use improvement), refactor until you are happy with it.
@@ -54,52 +54,69 @@ Let's take a deeper dive into one of the above questions in particular:
 
 Remember how we defined several different functions to create a histogram and access word frequency data out of it? Perhaps we could organize them as instance methods of a Histogram class.
 
-If you're not familiar with how to define classes in Python, you may want to [read some of the Classes chapter of the Python tutorial](https://docs.python.org/2.7/tutorial/classes.html) to get a handle on the syntax. You don't need to read the whole chapter before getting started, especially if you've defined classes in other programming languages.
+If you're not familiar with how to define classes in Python, you may want to [read some of the Classes chapter of the Python tutorial](https://docs.python.org/3/tutorial/classes.html) to get a handle on the syntax. You don't need to read the whole chapter before getting started, especially if you've defined classes in other programming languages.
 
-I've created a starter code project to help guide you in refactoring your histogram functions into classes. You'll need to:
+I've created a starter code template to help guide you in refactoring your histogram functions into classes. You'll need to:
 
-1. Clone the [Histograms repository](https://github.com/MakeSchool-Tutorials/Histograms) onto your computer:
+1. Pull the starter code from the course's origin repository (assuming you have [set up your repository](https://github.com/Product-College-Courses/CS-2-Tweet-Generator/blob/master/Setup.md) correctly)
+		git pull course master
 
-		git clone https://github.com/MakeSchool-Tutorials/Histograms.git
-
-2. Run the unit tests to see which methods are passing or failing:
-
-		python test_histograms.py
+2. Now navigate to the `source` directory and run the unit tests to see which methods are passing or failing:
+		python dictogram_test.py  # tests for Dictogram class (subclass of dict)
+		python listogram_test.py  # tests for Listogram class (subclass of list)
 
 3. Alternatively you can use `pytest` the run unit tests to see more readable and descriptive output:
-
 		pip install pytest  # (only need to install once)
-		pytest test_histograms.py
+		pytest dictogram_test.py  # tests for Dictogram class (subclass of dict)
 
-4. Refactor your existing histogram functions into class instance methods
+4. Refactor your existing histogram functions into `Dictogram` and `Listogram` class instance methods
 
-4. Run the unit tests again and fix any errors until they pass:
+5. Run the unit tests again and fix any errors until they pass:
+		python dictogram_test.py  # standard unittest error formatting
+		pytest dictogram_test.py  # pytest pretty formatting and more assertion info
 
-		python test_histograms.py  # standard error formatting
-		pytest test_histograms.py  # or pytest pretty formatting
+6. You can also run the `dictogram.py` or `listogram.py` modules as a script to check your results while refactoring:
+		python dictogram.py
+		python listogram.py
 
-5. You can also run the `histograms.py` module as a script to check your results while refactoring:
+Before implementing the missing class instance methods (marked `# TODO`):
 
-		python histograms.py
-
-Before implementing the missing methods (marked `#TODO`):
-
-	text list: abracadabra
+	word list: ['a', 'b', 'r', 'a', 'c', 'a', 'd', 'a', 'b', 'r', 'a']
 	dictogram: {}
-	listogram: []
+	0 tokens, 0 types
+	'r' occurs None times
+	'a' occurs None times
 
-	text list: ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
+	word list: ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
 	dictogram: {}
-	listogram: []
+	0 tokens, 0 types
+	'blue' occurs None times
+	'fish' occurs None times
 
-After correctly implementing the histogram methods:
+	word list: ['how', 'much', 'wood', 'would', 'a', 'wood', 'chuck', 'chuck', 'if', 'a', 'wood', 'chuck', 'could', 'chuck', 'wood']
+	dictogram: {}
+	0 tokens, 0 types
+	'chuck' occurs None times
+	'wood' occurs None times
 
-	text list: abracadabra
-	dictogram: {'a': 5, 'r': 2, 'b': 2, 'c': 1, 'd': 1}
-	listogram: [('a', 5), ('b', 2), ('r', 2), ('c', 1), ('d', 1)]
+After correctly implementing the histogram class instance methods:
 
-	text list: ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
-	dictogram: {'blue': 1, 'fish': 4, 'two': 1, 'red': 1, 'one': 1}
-	listogram: [('one', 1), ('fish', 4), ('two', 1), ('red', 1), ('blue', 1)]
+	word list: ['a', 'b', 'r', 'a', 'c', 'a', 'd', 'a', 'b', 'r', 'a']
+	dictogram: {'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1}
+	11 tokens, 5 types
+	'r' occurs 2 times
+	'a' occurs 5 times
+
+	word list: ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']
+	dictogram: {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1}
+	8 tokens, 5 types
+	'blue' occurs 1 times
+	'fish' occurs 4 times
+
+	word list: ['how', 'much', 'wood', 'would', 'a', 'wood', 'chuck', 'chuck', 'if', 'a', 'wood', 'chuck', 'could', 'chuck', 'wood']
+	dictogram: {'how': 1, 'much': 1, 'wood': 4, 'would': 1, 'a': 2, 'chuck': 4, 'if': 1, 'could': 1}
+	15 tokens, 8 types
+	'chuck' occurs 4 times
+	'wood' occurs 4 times
 
 Once you finish implementing the `Dictogram` and `Listogram` classes and have made the respective unit tests pass, be sure to commit your solutions and push to GitHub!
