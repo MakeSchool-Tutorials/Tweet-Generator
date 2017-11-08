@@ -59,23 +59,28 @@ If you're not familiar with how to define classes in Python, you may want to [re
 I've created a starter code template to help guide you in refactoring your histogram functions into classes. You'll need to:
 
 1. Pull the starter code from the course's origin repository (assuming you have [set up your repository](https://github.com/Product-College-Courses/CS-2-Tweet-Generator/blob/master/Setup.md) correctly)
+
 		git pull course master
 
 2. Now navigate to the `source` directory and run the unit tests to see which methods are passing or failing:
+
 		python dictogram_test.py  # tests for Dictogram class (subclass of dict)
 		python listogram_test.py  # tests for Listogram class (subclass of list)
 
 3. Alternatively you can use `pytest` the run unit tests to see more readable and descriptive output:
+
 		pip install pytest  # (only need to install once)
 		pytest dictogram_test.py  # tests for Dictogram class (subclass of dict)
 
 4. Refactor your existing histogram functions into `Dictogram` and `Listogram` class instance methods
 
 5. Run the unit tests again and fix any errors until they pass:
+
 		python dictogram_test.py  # standard unittest error formatting
 		pytest dictogram_test.py  # pytest pretty formatting and more assertion info
 
 6. You can also run the `dictogram.py` or `listogram.py` modules as a script to check your results while refactoring:
+
 		python dictogram.py
 		python listogram.py
 
