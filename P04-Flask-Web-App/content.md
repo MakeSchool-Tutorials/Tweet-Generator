@@ -74,7 +74,7 @@ The first step is to download and install the Flask library: [instructions](http
 
 Next you want to create a new script file that will be responsible for starting your web server. By convention this file is called `app.py`, but you can call it `server.py` or whatever you like.
 
-Start by following the instructions in the [Flask quickstart](http://flask.pocoo.org/docs/0.11/quickstart/) to build the most basic Flask app. Once you get it running, you should be able to open a browser and view your app at http://127.0.0.1:5000/ (read as "port 5000 on host 127.0.0.1").
+Start by following the instructions in the [Flask quickstart](http://flask.pocoo.org/docs/1.0/quickstart/) to build the most basic Flask app. Once you get it running, you should be able to open a browser and view your app at http://127.0.0.1:5000/ (read as "port 5000 on host 127.0.0.1").
 
 	$ python app.py
 	* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
