@@ -51,19 +51,19 @@ I've created a starter code project to help guide you in creating the `LinkedLis
 
 2. Run the unit tests to see which methods are passing or failing:
 
-		python test_linkedlist.py
+		python linkedlist_test.py
 
 3. Alternatively you can use `pytest` the run unit tests to see more readable and descriptive output:
 
 		pip install pytest  # (only need to install once)
-		pytest test_linkedlist.py
+		pytest linkedlist_test.py
 
 4. Implement the missing instance methods, then run the unit tests and fix any errors until they pass
 
 5. Run the unit tests again and fix any errors until they pass:
 
-		python test_linkedlist.py  # standard error formatting
-		pytest test_linkedlist.py  # or pytest pretty formatting
+		python linkedlist_test.py  # standard error formatting
+		pytest linkedlist_test.py  # or pytest pretty formatting
 
 6. You can also run the `linkedlist.py` module as a script to check your results while refactoring:
 
