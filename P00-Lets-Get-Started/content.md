@@ -2,14 +2,14 @@
 title: Let's Get Started
 slug: lets-get-started
 ---
-# What You'll Build
+## What You'll Build
 
 Learning about data structures and data processing is way more fun when you embed it in a project.  To do that, let's build a fun and silly tweet generator that generates sentences that sound realistic, but not always sensible.
 
 Here's an example generated sentence from the Ron Paul bot:
 > What currency are your thoughts on abolishing America's income tax altogether and get others to look into our private communications.
 
-We'll build this step-by-step; diving into the programming and python you need along the way.
+We'll build this step-by-step; diving into the programming and Python you need along the way.
 
 1. Use a Python script to randomly generate words from a dictionary.
 1. Build sentences by sampling these words using a Markov language model.
@@ -18,16 +18,16 @@ We'll build this step-by-step; diving into the programming and python you need a
 1.  Analyze the inner workings and performance tradeoffs of each data structure.
 1. Deploy your language model to a Flask web server on Heroku and connect it to Twitter to let users tweet their favorite results.
 
-# What You'll Learn
+## What You'll Learn
 By the end of this tutorial, you will:
 
-- master python data structures and data processing algorithms
+- master Python data structures and data processing algorithms
 - implement data structures including linked lists, hash tables, stacks, queues and heaps
 - parse text documents and store information in data structures
 - implement sampling methods and Markov chains on data sets
 
-# What You Need To Know To Succeed
-This project is built in Python.
+## What You Need To Know To Succeed
+This project is built in Python and relies on a basic knowledge of Python. 
 
 **Wait! I don't know Python!**
 
@@ -104,9 +104,12 @@ This script can be imported within another file in the same directory with `impo
 
 
 > [action]
-> Write the python_quote module
+>
+> Write the **python_quote** module:
+>
 > 1. In your tutorial repository (created from the starter code):
 >  -  create a **python_quote.py** file, copy the code above into it, and verify that you can execute it directly from the terminal.
+>
 > 1. Create a **quote_user.py** file that imports the **python_quote.py** module and runs the `random_python_quote()` function.  
 >  - verify the importing works by executing **quote_user.py** directly from the terminal.
 >
@@ -122,9 +125,9 @@ $ git push
 Rearrange Words
 ==
 
-Off to the races! The first step is to get our bearings with Python by writing a basic script with only a few moving parts.
+Now that you have a repository and your first commit, let's keep going by writing a basic script with only a few moving parts.
 
-To start, we'll be building a script that randomly rearranges a set of words provided as command-line arguments to the script.
+We'll build a script that randomly rearranges a set of words provided as command-line arguments to the script.
 
 For example, if you run the following command (assuming your script name is *rearrange.py*, though you can use any name you like)
 
@@ -146,7 +149,7 @@ That's it. You have all of the specs needed to produce a correct program.
 
 > [action]
 >
-> Write the reaarrange.py script using these requirements and add it to your tutorial repository
+> Write the **reaarrange.py** script using these requirements and add it to your tutorial repository
 >
 > **Commit your code:**
 >
