@@ -2,7 +2,6 @@
 title: Let's Get Started
 slug: lets-get-started
 ---
-## What You'll Build
 
 Learning about data structures and data processing is way more fun when you embed it in a project.  To do that, let's build a fun and silly tweet generator that generates sentences that sound realistic, but not always sensible.
 
@@ -18,7 +17,7 @@ We'll build this step-by-step; diving into the programming and Python you need a
 1.  Analyze the inner workings and performance tradeoffs of each data structure.
 1. Deploy your language model to a Flask web server on Heroku and connect it to Twitter to let users tweet their favorite results.
 
-## What You'll Learn
+# Learning Outcomes
 By the end of this tutorial, you will:
 
 - master Python data structures and data processing algorithms
@@ -27,11 +26,11 @@ By the end of this tutorial, you will:
 - implement sampling methods and Markov chains on data sets
 
 > [action]
-> Take a moment to read through these learning outcomes.  Make a note of what you already know about each.  You'll look back at this when you are done with the tutorial.
+> Take a moment to read through these learning outcomes and make a note of how much you already know about each one.  You'll look back at this when you are done with the tutorial.
 
 
-## What You Need To Know To Succeed
-This project is built in Python and relies on a basic knowledge of Python. 
+# Prerequisites
+This project is built in Python and relies on a basic knowledge of Python.
 
 **Wait! I don't know Python!**
 
@@ -59,8 +58,19 @@ As you go through this tutorial, you will regularly update your progress on Gith
 - You will also regularly deploy updates to your Flask web server on Heroku.
 
 > [action]
->This tutorial uses starter code. Follow the [Repository Setup Instructions](https://github.com/Make-School-Courses/CS-2-Tweet-Generator/blob/master/Setup.md) to set up your Github repository from this starter code.
+> This tutorial uses starter code.
 >
+> Follow the **[Repository Setup Instructions](https://github.com/Make-School-Courses/CS-2-Tweet-Generator/blob/master/Setup.md)** to set up your Github repository from this starter code.
+>
+> Add a README.md file to your repo and add information about the project to this file.
+>
+> **Commit your code:**
+>
+```bash
+$ git add .
+$ git commit -m 'initial commit after starter code'
+$ git push
+```
 
 
 Python Modules
@@ -101,6 +111,7 @@ As written, this code can only be run as a script because all lines are always e
 
 This script can be imported within another file in the same directory with `import python_quote`, which would give access to the `random_python_quote()` function, or it can be executed directly, like so:
 
+
 	$ python python_quote.py
 	It's just a flesh wound.
 
@@ -112,10 +123,12 @@ This script can be imported within another file in the same directory with `impo
 >
 > Write the **python_quote** module:
 >
-> In your tutorial repository (created from the starter code):
+> In your tutorial repository (created from the starter code)
+>  
 >  -  create a **python_quote.py** file, copy the code above into it, and verify that you can execute it directly from the terminal.
 >
-> Create a **quote_user.py** file that imports the **python_quote.py** module and runs the `random_python_quote()` function.  
+> Create a **quote_user.py** file that imports the **python_quote.py** module and runs the `random_python_quote()` function.
+>
 >  - verify the importing works by executing **quote_user.py** directly from the terminal.
 >
 > **Commit your code:**
@@ -130,11 +143,11 @@ $ git push
 Rearrange Words
 ==
 
-Now that you have a repository and your first commit, let's keep going by writing a basic script with only a few moving parts.
+Now that you have a repository and understand the module pattern, let's keep going by writing a basic script with only a few moving parts.
 
-We'll build a script that randomly rearranges a set of words provided as command-line arguments to the script.
+Write a script (*rearrange.py*), that randomly rearranges a set of words provided as command-line arguments to the script.  
 
-For example, if you run the following command (assuming your script name is *rearrange.py*, though you can use any name you like)
+For example, if you run the following command:
 
 	$ python rearrange.py how now brown cow
 
@@ -150,11 +163,9 @@ Of course, because it is random, repeated executions of the script with the same
 	$ python rearrange.py how now brown cow
 	now how cow brown
 
-That's it. You have all of the specs needed to produce a correct program.
-
 > [action]
 >
-> Write the **reaarrange.py** script using these requirements and add it to your tutorial repository
+> Write the **reaarrange.py** script using the requirements above and add it to your tutorial repository
 >
 > **Commit your code:**
 >
@@ -171,10 +182,12 @@ $ git push
 Where to Go From Here
 ==
 
-> [action]
+> [challenge]
 >
 Finished already? If you still have time left, you can keep building off of this idea or try writing other programs that work with words, for example:
 
 - String reversals: reverse words, sentences
 - An interactive "mad libs" script
 - Anagram generator
+
+>
