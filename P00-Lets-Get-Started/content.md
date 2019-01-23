@@ -26,6 +26,10 @@ By the end of this tutorial, you will:
 - parse text documents and store information in data structures
 - implement sampling methods and Markov chains on data sets
 
+> [action]
+> Take a moment to read through these learning outcomes.  Make a note of what you already know about each.  You'll look back at this when you are done with the tutorial.
+
+
 ## What You Need To Know To Succeed
 This project is built in Python and relies on a basic knowledge of Python. 
 
@@ -46,6 +50,7 @@ Some of the topics you'll definitely need to research are:
 - the random module (for generating random numbers)
 
 You don't need to learn all this before you start, you can learn it as you need along the way.
+
 
 # Github & Deployment
 As you go through this tutorial, you will regularly update your progress on Github and through a deployed solution.
@@ -107,10 +112,10 @@ This script can be imported within another file in the same directory with `impo
 >
 > Write the **python_quote** module:
 >
-> 1. In your tutorial repository (created from the starter code):
+> In your tutorial repository (created from the starter code):
 >  -  create a **python_quote.py** file, copy the code above into it, and verify that you can execute it directly from the terminal.
 >
-> 1. Create a **quote_user.py** file that imports the **python_quote.py** module and runs the `random_python_quote()` function.  
+> Create a **quote_user.py** file that imports the **python_quote.py** module and runs the `random_python_quote()` function.  
 >  - verify the importing works by executing **quote_user.py** directly from the terminal.
 >
 > **Commit your code:**
