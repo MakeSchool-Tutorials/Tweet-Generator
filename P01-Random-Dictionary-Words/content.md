@@ -76,10 +76,9 @@ Where to Go From Here
 
 > [challenge]
 >
-Finished already? If you still have time left, take your program further or explore other ideas, for example:
+> Finished already? If you still have time left, take your program further or explore other ideas, for example:
 >
-- Make it fast! Can you optimize this program to generate sentences more quickly? Make sure to benchmark your script before and after optimizations.
+> - Make it fast! Can you optimize this program to generate sentences more quickly? Make sure to benchmark your script before and after optimizations.
 - Write your own vocabulary study game: flash a word, player has to guess the definition, then is shown the definition.
 - Build an autocomplete program: given the first characters of a word, print a list of all possible words to spell from that base.
 - Make a better anagram generator that only produces real words (i.e. must be included in the `words` file).
->
