@@ -58,11 +58,10 @@ As you go through this tutorial, you will regularly update your progress on Gith
 - You will also regularly deploy updates to your Flask web server on Heroku.
 
 > [action]
-> This tutorial uses starter code.
+> This tutorial uses starter code:
 >
-> Follow the **[Repository Setup Instructions](https://github.com/Make-School-Courses/CS-2-Tweet-Generator/blob/master/Setup.md)** to set up your Github repository from this starter code.
->
-> Add a README.md file to your repo and add information about the project to this file.
+- Follow the **[Repository Setup Instructions](https://github.com/Make-School-Courses/CS-2-Tweet-Generator/blob/master/Setup.md)** to set up your Github repository from this starter code.
+- Add a README.md file to your repo and add information about the project to this file.
 >
 > **Commit your code:**
 >
@@ -123,13 +122,10 @@ This script can be imported within another file in the same directory with `impo
 >
 > Write the **python_quote** module:
 >
-> In your tutorial repository (created from the starter code)
->  
->  -  create a **python_quote.py** file, copy the code above into it, and verify that you can execute it directly from the terminal.
->
-> Create a **quote_user.py** file that imports the **python_quote.py** module and runs the `random_python_quote()` function.
->
->  - verify the importing works by executing **quote_user.py** directly from the terminal.
+- In your tutorial repository (created from the starter code): create a **python_quote.py** file and copy the code above into it.
+- Verify that you can execute **python_quote.py** directly from the terminal.
+- Create a **quote_user.py** file that imports the **python_quote.py** module and runs the `random_python_quote()` function.
+- Verify the importing works by executing **quote_user.py** directly from the terminal.
 >
 > **Commit your code:**
 >
@@ -185,7 +181,7 @@ Where to Go From Here
 > [challenge]
 >
 Finished already? If you still have time left, you can keep building off of this idea or try writing other programs that work with words, for example:
-
+>
 - String reversals: reverse words, sentences
 - An interactive "mad libs" script
 - Anagram generator

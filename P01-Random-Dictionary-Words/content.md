@@ -8,6 +8,7 @@ Let's take a step back and remember what our ultimate goal is in this project: t
 We'll practice generating sentences from a body of text in a text file. The algorithm design is fairly straight-forward: read in a text file, select a random set of words from the file, and put those words together into a "sentence".
 
 Here are some examples of this program in action:
+
 ```bash
 $ python dictionary_words.py 3
 wuss paragrammatist avitaminosis.
@@ -20,21 +21,24 @@ polyoicous lupulin pennyrot boree.
 ```
 
 We will make several assumptions to reduce the complexity of this program:
+
 1. The program only accepts one argument: the number of words to be selected.
-1. The only parameter to the program is the number of words, the rest of the variables like the file the words come from will be hard-coded.
-1. The sentences do not have to make grammatical sense
-1. The word order does not matter
-1. Word selection can be completely random
+1. All parameters except the number of words will be hard-coded.
+1. We will use the `words` file which is available on all Unix systems for our list of words.
+1. The sentences do not have to make grammatical sense.
+1. Word selection can be completely random and the word order does not matter.
 
-The words will be chosen from a text file that is already on your computer and is already formatted nicely for parsing: the `words` file. This file is available on all Unix and Unix-like systems. On my MacBook running OS X Yosemite, this file is located at `/usr/share/dict/words`. Let's take a peek at this file:
-
+> [action]
+> Locate the `words` file on your computer. On a Macbook running OS X Yosemite, this file is located at `/usr/share/dict/words`.
+>
+> Use the `wc` (word count) command to show the number of lines, words, and bytes in the file.
+>
 ```bash
 $ wc /usr/share/dict/words
 235886  235886 2493109 /usr/share/dict/words
 ```
-
-The `wc` (word count) command shows lines, words, and bytes in a file. That's a lot of words. What does the end of the file look like?
-
+> Use the `tail` function to see what the end of the file looks like.
+>
 ```bash
 $ tail -5 /usr/share/dict/words
 zythem
@@ -43,25 +47,15 @@ zythum
 Zyzomys
 Zyzzogeton
 ```
-
-OK, so the file has one word per line, alphabetized from top to bottom.
-
-> [info]
 >
 A Zyzzogeton is a "rare genus of leafhopper endemic to South America", in case you were wondering.
 
-Your job is to use the words from this file to generate random "sentences". Of course, these aren't going to make much sense or be grammatically correct. Why is that, do you think? There's some good brain food for pondering in that question.
+The file is nicely formatted with one word per line, alphabetized from top to bottom.  Your job is to use the words from this file to generate random "sentences". Of course, these aren't going to make much sense or be grammatically correct but that is fine for now.
 
-> [action]
->
-> Write the **dictonary_words.py** script using the requirements above and add it to your tutorial repository
->
-> **Commit your code:**
->
-
-# Wait! How do I work with files in Python!?
+**Wait! How do I work with files in Python!?**
 
 No worries, it's not that hard to learn. Here are some resources:
+
 - Read the [tutorial in the official docs](https://docs.python.org/2.7/tutorial/inputoutput.html)
 - Read the [Working with File Objects section in Dive into Python](http://www.diveintopython.net/file_handling/file_objects.html)
 
@@ -70,6 +64,20 @@ Try doing small bits of file I/O before moving onto the `words` file since it is
 Once you are ready to work with the `words` file, make sure to design the steps of your program in pseudocode before attempting it in Python. Then think about how you can break down these steps into their smallest component parts, and encapsulate these steps in functions.
 
 Finally, you have a few data types to choose from when you need to store the words. If you're unfamiliar with Python, try starting with the list data type, which stores an ordered list of objects (like strings, numbers, etc.).
+
+> [action]
+>
+> Write the **dictonary_words.py** script:
+>
+- read in the `words` file
+- select a random set of words from the file and store in a data type
+- put the number of words requested together into a "sentence"
+- output your sentence
+
+>
+> **Commit your code.**
+>
+
 
 Where to Go From Here
 ==
